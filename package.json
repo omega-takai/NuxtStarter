@@ -1,7 +1,7 @@
 {
-  "name": "NuxtStarter",
+  "name": "nuxt-starter",
   "version": "1.0.0",
-  "description": "My excellent Nuxt.js project",
+  "description": "Nuxt.js with TypeScript",
   "author": "Tomonari Takai",
   "private": true,
   "scripts": {
