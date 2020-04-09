@@ -1,3 +1,17 @@
+// SEE: https://ja.nuxtjs.org/faq/github-pages/
+const baseDir = process.env.BASE_DIR || '/'
+const routerBase = process.env.BASE_DIR
+  ? {
+      router: {
+        base: baseDir
+      },
+      generate: {
+        fallback: true, // '404.html' を使用したい場合
+        dir: 'public'
+      }
+    }
+  : {}
+
 export default {
   mode: 'universal',
   /*
@@ -14,7 +28,7 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: `${baseDir}favicon.ico` }]
   },
   /*
    ** Customize the progress-bar color
@@ -59,5 +73,6 @@ export default {
      ** You can extend webpack config here
      */
     // extend(config, ctx) {}
-  }
+  },
+  ...routerBase
 }

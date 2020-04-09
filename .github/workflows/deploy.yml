@@ -1,0 +1,31 @@
+# Document: https://help.github.com/ja/actions
+name: DEPLOYMENT
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    name: Deployment with GitHub Pages - Nuxt.js
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: yarn install
+      - run: yarn generate:gh-pages
+
+      - name: deploy
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

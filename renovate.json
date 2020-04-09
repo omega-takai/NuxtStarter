@@ -1,5 +1,24 @@
 {
   "extends": [
-    "config:base"
-  ]
+    "config:base",
+    "schedule:earlyMondays",
+    ":label(renovate)",
+    ":automergePatch",
+    ":automergeMinor",
+    ":automergePr",
+    ":assignee(t--takai)",
+    ":timezone(Asia/Tokyo)"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "extends": [
+      "schedule:monthly",
+      ":assignee(t--takai)",
+      ":automergePr"
+    ]
+  },
+  "major": {
+    "automerge": false
+  }
 }
