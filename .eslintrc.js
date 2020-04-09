@@ -16,5 +16,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "semi": [2, "never"],
+    "no-console": "off",
+    "prettier/prettier": ["error", { trailingComma: 'es5', singleQuote: true, semi: false }]
   }
 }
