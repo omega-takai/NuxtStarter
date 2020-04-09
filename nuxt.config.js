@@ -30,6 +30,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: `${baseDir}favicon.ico` }]
   },
+  /**
+   * Doc: https://ja.nuxtjs.org/api/configuration-srcdir/
+   */
+  srcDir: 'src/',
   /*
    ** Customize the progress-bar color
    */
