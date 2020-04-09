@@ -8,13 +8,14 @@
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "generate": "nuxt-ts generate",
+    "generate:gh-pages": "cross-env BASE_DIR=/NuxtStarter/ nuxt-ts generate",
     "start": "nuxt-ts start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,vue}": "yarn lint",
-    "*.{css,vue}": "stylelint"
+    "*.{js,vue}": "yarn lint --fix",
+    "*.{css,vue}": "stylelint --fix"
   },
   "husky": {
     "hooks": {
@@ -22,30 +23,31 @@
     }
   },
   "dependencies": {
-    "nuxt": "2.12.2",
     "@nuxt/typescript-runtime": "0.4.2",
     "@nuxtjs/axios": "5.9.7",
+    "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/pwa": "3.0.0-beta.20",
-    "@nuxtjs/dotenv": "1.4.1"
+    "nuxt": "2.12.2"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "0.6.2",
     "@nuxtjs/eslint-config-typescript": "1.0.2",
     "@nuxtjs/eslint-module": "1.1.0",
-    "babel-eslint": "10.1.0",
-    "eslint": "6.8.0",
-    "eslint-plugin-nuxt": "0.5.2",
-    "eslint-config-prettier": "6.10.1",
-    "eslint-plugin-prettier": "3.1.2",
-    "prettier": "1.19.1",
-    "husky": "4.2.3",
-    "lint-staged": "10.1.2",
     "@nuxtjs/stylelint-module": "3.2.2",
-    "stylelint": "10.1.0",
     "@vue/test-utils": "1.0.0-beta.33",
+    "babel-eslint": "10.1.0",
     "babel-jest": "24.9.0",
+    "cross-env": "^7.0.2",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-nuxt": "0.5.2",
+    "eslint-plugin-prettier": "3.1.2",
+    "husky": "4.2.3",
     "jest": "24.9.0",
-    "vue-jest": "4.0.0-beta.2",
-    "ts-jest": "25.3.1"
+    "lint-staged": "10.1.2",
+    "prettier": "1.19.1",
+    "stylelint": "10.1.0",
+    "ts-jest": "25.3.1",
+    "vue-jest": "4.0.0-beta.2"
   }
 }

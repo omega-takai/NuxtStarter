@@ -17,6 +17,9 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# generate static project for GitHub Pages
+$ yarn generate:gh-pages
 ```
 
 ## Use Create Nuxt App
