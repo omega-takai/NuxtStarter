@@ -3,12 +3,12 @@ const baseDir = process.env.BASE_DIR || '/'
 const routerBase = process.env.BASE_DIR
   ? {
       router: {
-        base: baseDir
+        base: baseDir,
       },
       generate: {
         fallback: true, // '404.html' を使用したい場合
-        dir: 'public'
-      }
+        dir: 'public',
+      },
     }
   : {}
 
@@ -25,10 +25,12 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: `${baseDir}favicon.ico` }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: `${baseDir}favicon.ico` },
+    ],
   },
   /**
    * Doc: https://ja.nuxtjs.org/api/configuration-srcdir/
@@ -52,7 +54,7 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
   ],
   /*
    ** Nuxt.js modules
@@ -62,7 +64,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Axios module configuration
@@ -78,5 +80,5 @@ export default {
      */
     // extend(config, ctx) {}
   },
-  ...routerBase
+  ...routerBase,
 }
