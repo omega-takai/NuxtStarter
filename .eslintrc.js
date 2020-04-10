@@ -18,6 +18,10 @@ module.exports = {
   rules: {
     "semi": [2, "never"],
     "no-console": "off",
-    "prettier/prettier": ["error", { trailingComma: 'es5', singleQuote: true, semi: false }]
+    "prettier/prettier": ["error", {
+      trailingComma: 'es5',
+      singleQuote: true,
+      semi: false
+    }]
   }
 }
