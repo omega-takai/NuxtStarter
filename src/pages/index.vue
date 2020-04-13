@@ -24,5 +24,5 @@
   </div>
 </template>
 
-<script lang="ts" src="@/assets/script/pages/index.ts" />
-<style scoped src="@/assets/style/pages/index.css" />
+<script lang="ts" src="./index.ts" />
+<style scoped src="./index.css" />

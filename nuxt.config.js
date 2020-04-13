@@ -71,6 +71,13 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /**
+   * See: https://ja.nuxtjs.org/api/configuration-server
+   */
+  server: {
+    port: 8000, // デフォルト: 3000
+    timing: false,
+  },
   /*
    ** Build configuration
    */
