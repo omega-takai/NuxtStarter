@@ -1,69 +1,26 @@
 <template>
   <div class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        NuxtStarter
-      </h1>
-      <h2 class="subtitle">
-        My excellent Nuxt.js project
-      </h2>
+      <TheLogo />
+      <h1 class="title" v-text="'NuxtStarter'" />
+      <h2 class="subtitle" v-text="'My excellent Nuxt.js project'" />
       <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
+        <BaseButton
+          link-url="https://nuxtjs.org/"
+          button-text="Documentation"
+          color-type="green"
           target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        />
+        <BaseButton
+          link-url="https://github.com/nuxt/nuxt.js"
+          button-text="GitHub"
+          color-type="grey"
+          target="_blank"
+        />
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
-
-export default Vue.extend({
-  components: {
-    Logo,
-  },
-})
-</script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<script lang="ts" src="./index.ts"></script>
+<style scoped src="./index.css"></style>

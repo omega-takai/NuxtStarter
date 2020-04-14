@@ -43,7 +43,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/style/global.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -71,6 +71,13 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /**
+   * See: https://ja.nuxtjs.org/api/configuration-server
+   */
+  server: {
+    port: 8000, // デフォルト: 3000
+    timing: false,
+  },
   /*
    ** Build configuration
    */
@@ -78,7 +85,17 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    // extend(config, ctx) {}
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|ts|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+        })
+      }
+    },
   },
   ...routerBase,
 }
