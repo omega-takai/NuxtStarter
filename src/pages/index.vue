@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div :class="$style.container">
     <div>
       <TheLogo />
-      <h1 class="title" v-text="'NuxtStarter'" />
-      <h2 class="subtitle" v-text="'My excellent Nuxt.js project'" />
-      <div class="links">
+      <h1 :class="$style.title" v-text="'NuxtStarter'" />
+      <h2 :class="$style.subtitle" v-text="'My excellent Nuxt.js project'" />
+      <div :class="$style.links">
         <BaseButton
           link-url="https://nuxtjs.org/"
           button-text="Documentation"
@@ -23,4 +23,4 @@
 </template>
 
 <script lang="ts" src="./index.ts"></script>
-<style scoped src="./index.css"></style>
+<style lang="scss" module src="./index.scss"></style>
