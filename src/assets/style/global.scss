@@ -1,0 +1,41 @@
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+html {
+  color: fonts('color');
+  font: {
+    family: TypeFamily('normal');
+    size: #{fonts('size')}px;
+    weight: fonts('normal');
+    feature-settings: fonts('kerning');
+  }
+}
+
+// animation ===============================
+// SEE: https://jp.vuejs.org/v2/guide/transitions.html#トランジションクラス
+// SEE: https://blogs.adobe.com/japan/cc-web-ui-ux-animation-principles-tips-tricks-best-practices/
+
+// Enter
+.v-enter {
+  opacity: 0
+}
+.v-enter-to {
+  opacity: 1
+}
+.v-enter-active {
+  $_outCubic: cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: opacity 1s $_outCubic;
+}
+
+// Leave
+.v-leave {
+  opacity: 1
+}
+.v-leave-to {
+  opacity: 0
+}
+.v-leave-active {
+  $_inCubic: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transition: opacity 2s $_inCubic;
+}

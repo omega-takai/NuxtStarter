@@ -71,12 +71,20 @@ export default {
   /**
    * Global CSS
    */
-  css: ['@/assets/style/global.css'],
+  css: ['@/assets/style/global.scss'],
   /**
-   * Styles
+   * Style Resources
+   * Do not import actual styles.
+   * Use this module only to import
+   * variables, mixins, functions (et cetera)
+   * as they won't exist in the actual build.
    */
   styleResources: {
-    scss: [],
+    scss: [
+      './src/assets/style/variables.scss',
+      './src/assets/style/mixins.scss',
+      './src/assets/style/functions.scss',
+    ],
   },
   /*
    ** Nuxt.js modules

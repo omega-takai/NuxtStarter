@@ -1,0 +1,83 @@
+// Default FontSize
+// root em = 1rem = 10px
+$rootFontSize: 10;
+
+// screen size ==============================
+// ref: https://hashimotosan.hatenablog.jp/entry/2019/05/28/164834
+$screens: (
+  "extraLarge": 1366px,
+  "large": 960px,
+  "small": 560px,
+);
+
+// Media Query List ==============================
+$mql-mobile:
+  "(max-width: #{screens('small')})";
+
+$mql-tablet:
+  "(min-width: #{screens('small') + 1px})"
+  "and (max-width: #{screens('large')})";
+
+$mql-desktop:
+  "(min-width: #{screens('large') + 1px})";
+
+// color ====================================
+$_white: whitesmoke;
+$_black: black;
+$_fonts: #333;
+$colors: (
+  "white": rgba($_white, 1),
+  "whiteAlpha": rgba($_white, 0.4),
+  "black": rgba($_black, 1),
+  "green": rgba(#3b8070, 1),
+  "background": rgba($_white, 1),
+  "accent": rgba(blueviolet, 1),
+  "inverted": rgba(#35495e, 1),
+  "font": rgba($_fonts, 1),
+  "fontSub": rgba($_fonts, 0.6),
+);
+
+// fonts ====================================
+$fonts: (
+  "color": colors(font),
+  "normal": 400,
+  "bold": 700, // iOS激太り対策
+  "extraBold": 900,
+  "size": $rootFontSize,
+  "kerning": 'palt',
+  "space": 0.1em,
+  "lineHeight": 1.5,
+);
+
+$TypeFamily: (
+  "normal": #{
+    YakuHanJP, 'Noto Sans JP',
+    '-apple-system', BlinkMacSystemFont, 'Segoe UI',
+    'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    Arial, Meiryo, sans-serif
+  },
+  "number": #{ Gelasio, serif },
+);
+
+// Like a Modular Scale
+$TypeScale: (
+  "extra": pix2rem(177),
+  "h1": pix2rem(110),
+  "h2": pix2rem(68),
+  "h3": pix2rem(42),
+  "h4": pix2rem(26),
+  "subtitle": pix2rem(26),
+  "body": pix2rem(16),
+  "caption": pix2rem(10),
+);
+
+$TypeWeight: (
+  "extra": 900,
+  "h1": 400,
+  "h2": 400,
+  "h3": 700,
+  "h4": 700,
+  "subtitle": 700,
+  "body": 400,
+  "caption": 400,
+);
