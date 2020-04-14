@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="NuxtLogo"
+    :class="$style.NuxtLogo"
     width="245"
     height="180"
     viewBox="0 0 452 342"
@@ -24,4 +24,4 @@
   </svg>
 </template>
 
-<style scoped src="./index.css" />
+<style lang="scss" module src="./index.scss" />

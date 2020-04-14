@@ -1,0 +1,18 @@
+// =====================================
+// NOTE
+// animation: name .5s infinite linear; OK
+// animation: .5s infinite linear name; Can't work
+// =====================================
+.NuxtLogo {
+  margin: auto;
+  animation: appear 1s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
