@@ -41,7 +41,7 @@ $colors: (
 $fonts: (
   "color": colors(font),
   "normal": 400,
-  "bold": 700, // iOS激太り対策
+  "bold": 600, // iOS激太り対策
   "extraBold": 900,
   "size": $rootFontSize,
   "kerning": 'palt',
@@ -75,9 +75,9 @@ $TypeWeight: (
   "extra": 900,
   "h1": 400,
   "h2": 400,
-  "h3": 700,
-  "h4": 700,
-  "subtitle": 700,
+  "h3": 600,
+  "h4": 600,
+  "subtitle": 600,
   "body": 400,
   "caption": 400,
 );
