@@ -2,12 +2,8 @@
   <div class="container">
     <div>
       <TheLogo />
-      <h1 class="title">
-        NuxtStarter
-      </h1>
-      <h2 class="subtitle">
-        My excellent Nuxt.js project
-      </h2>
+      <h1 class="title" v-text="'NuxtStarter'" />
+      <h2 class="subtitle" v-text="'My excellent Nuxt.js project'" />
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
@@ -24,5 +20,5 @@
   </div>
 </template>
 
-<script lang="ts" src="./index.ts" />
-<style scoped src="./index.css" />
+<script lang="ts" src="./index.ts"></script>
+<style scoped src="./index.css"></style>
