@@ -10,12 +10,13 @@
     "generate": "nuxt-ts generate",
     "generate:gh-pages": "cross-env BASE_DIR=/NuxtStarter/ nuxt-ts generate",
     "start": "nuxt-ts start",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
+    "lint:fix": "yarn lint --fix",
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,vue}": "yarn lint --fix",
-    "*.{css,vue}": "stylelint --fix"
+    "*.{js,ts,vue}": "yarn lint --fix",
+    "*.{css,scss,vue}": "stylelint --fix"
   },
   "husky": {
     "hooks": {
