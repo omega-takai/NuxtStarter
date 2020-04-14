@@ -5,16 +5,18 @@
       <h1 class="title" v-text="'NuxtStarter'" />
       <h2 class="subtitle" v-text="'My excellent Nuxt.js project'" />
       <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
+        <BaseButton
+          link-url="https://nuxtjs.org/"
+          button-text="Documentation"
+          color-type="green"
           target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        />
+        <BaseButton
+          link-url="https://github.com/nuxt/nuxt.js"
+          button-text="GitHub"
+          color-type="grey"
+          target="_blank"
+        />
       </div>
     </div>
   </div>
