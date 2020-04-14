@@ -1,5 +1,5 @@
-<template>
-  <a :href="linkUrl" :class="$style[className]" v-text="buttonText" />
+<template lang="pug">
+  a(:href="linkUrl" :class="$style[className]") {{ buttonText }}
 </template>
 
 <script lang="ts" src="./index.ts"></script>
