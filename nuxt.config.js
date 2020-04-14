@@ -111,6 +111,11 @@ export default {
         })
       }
     },
+    postcss: {
+      preset: {
+        autoprefixer: { grid: 'autoplace' },
+      },
+    },
   },
   ...routerBase,
 }
