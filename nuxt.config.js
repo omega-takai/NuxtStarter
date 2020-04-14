@@ -1,3 +1,17 @@
+import Sass from 'sass'
+import Fiber from 'fibers'
+
+const loaderSetting = {
+  loaders: {
+    scss: {
+      implementation: Sass,
+      sassOptions: {
+        fiber: Fiber,
+      },
+    },
+  },
+}
+
 // SEE: https://ja.nuxtjs.org/faq/github-pages/
 const baseDir = process.env.BASE_DIR || '/'
 const routerBase = process.env.BASE_DIR
@@ -85,6 +99,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    ...loaderSetting,
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
