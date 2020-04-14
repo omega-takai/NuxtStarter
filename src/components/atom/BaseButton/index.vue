@@ -1,6 +1,6 @@
 <template>
-  <a :href="linkUrl" :class="className" v-text="buttonText" />
+  <a :href="linkUrl" :class="$style[className]" v-text="buttonText" />
 </template>
 
 <script lang="ts" src="./index.ts"></script>
-<style scoped src="./index.css"></style>
+<style lang="scss" module src="./index.scss"></style>
