@@ -9,4 +9,6 @@ module.exports = {
   ],
   plugins: [],
   rules: {},
+  // stylelint ignores the node_modules directory by default.
+  ignoreFiles: ['**/*.{js,ts}'],
 }
