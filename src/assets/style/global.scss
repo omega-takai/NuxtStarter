@@ -29,9 +29,9 @@ html {
   opacity: 1;
 }
 .v-enter-active {
-  $_outCubic: cubic-bezier(0.22, 0.61, 0.36, 1);
+  $outCubic: cubic-bezier(0.22, 0.61, 0.36, 1);
 
-  transition: opacity 1s $_outCubic;
+  transition: opacity 1s $outCubic;
 }
 
 // Leave
@@ -42,7 +42,7 @@ html {
   opacity: 0;
 }
 .v-leave-active {
-  $_inCubic: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  $inCubic: cubic-bezier(0.55, 0.06, 0.68, 0.19);
 
-  transition: opacity 2s $_inCubic;
+  transition: opacity 2s $inCubic;
 }
