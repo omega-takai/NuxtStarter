@@ -12,7 +12,7 @@ html {
   font: {
     family: typefamily('normal');
     feature-settings: fonts('kerning');
-    size: #{$rootFontSize}px;
+    size: #{$root-font-size}px;
     weight: fonts('normal');
   }
 }
@@ -29,9 +29,9 @@ html {
   opacity: 1;
 }
 .v-enter-active {
-  $outCubic: cubic-bezier(0.22, 0.61, 0.36, 1);
+  $out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
 
-  transition: opacity 1s $outCubic;
+  transition: opacity 1s $out-cubic;
 }
 
 // Leave
@@ -42,7 +42,7 @@ html {
   opacity: 0;
 }
 .v-leave-active {
-  $inCubic: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  $in-cubic: cubic-bezier(0.55, 0.06, 0.68, 0.19);
 
-  transition: opacity 2s $inCubic;
+  transition: opacity 2s $in-cubic;
 }

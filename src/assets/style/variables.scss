@@ -1,6 +1,6 @@
 // Default FontSize
 // root em = 1rem = 10px
-$rootFontSize: 10;
+$root-font-size: 10;
 
 // screen size ==============================
 // ref: https://hashimotosan.hatenablog.jp/entry/2019/05/28/164834
@@ -44,7 +44,7 @@ $fonts: (
   'lineHeight': 1.5
 );
 
-$typeFamily: (
+$type-family: (
   'normal': #{YakuHanJP,
   'Noto Sans JP',
   '-apple-system',
@@ -61,12 +61,12 @@ $typeFamily: (
 
 // Like a Modular Scale ========================
 @function pix-to-rem($Number) {
-  $ratio: 1 / $rootFontSize; // default 0.1
+  $ratio: 1 / $root-font-size; // default 0.1
   $computed: round($Number * $ratio * 1000) / 1000;
   @return #{$computed}rem;
 }
 
-$typeScale: (
+$type-scale: (
   'extra': pix-to-rem(177),
   'h1': pix-to-rem(110),
   'h2': pix-to-rem(68),
@@ -77,7 +77,7 @@ $typeScale: (
   'caption': pix-to-rem(10)
 );
 
-$typeWeight: (
+$type-weight: (
   'extra': 900,
   'h1': 400,
   'h2': 400,

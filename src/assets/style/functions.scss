@@ -1,7 +1,7 @@
 @import 'variables';
 
 // calc =======================
-$ratio: 1 / $rootFontSize; // default 0.1
+$ratio: 1 / $root-font-size; // default 0.1
 @function pix-to-rem($Number) {
   $computed: round($Number * $ratio * 1000) / 1000;
   @return #{$computed}rem;
@@ -23,14 +23,14 @@ $ratio: 1 / $rootFontSize; // default 0.1
 }
 
 @function typeFamily($key) {
-  @return map-get($typeFamily, $key);
+  @return map-get($type-family, $key);
 }
 
 // Like a Modular Scale =======================
 @function typeScale($key) {
-  @return map-get($TypeScale, $key);
+  @return map-get($type-scale, $key);
 }
 
 @function typeWeight($key) {
-  @return map-get($TypeWeight, $key);
+  @return map-get($type-weight, $key);
 }
