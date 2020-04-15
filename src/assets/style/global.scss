@@ -1,14 +1,19 @@
+// Library =====================================
+@import 'destyle.css';
+
+// Original Utils ==============================
 @import 'variables';
 @import 'mixins';
 @import 'functions';
 
+// Style Instance ==============================
 html {
-  color: fonts('color');
+  color: Fonts('color');
   font: {
     family: TypeFamily('normal');
-    size: #{fonts('size')}px;
-    weight: fonts('normal');
-    feature-settings: fonts('kerning');
+    size: #{$rootFontSize}px;
+    weight: Fonts('normal');
+    feature-settings: Fonts('kerning');
   }
 }
 

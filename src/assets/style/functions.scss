@@ -1,25 +1,24 @@
 @import 'variables';
 
 // calc =======================
-$_rootSize: $rootFontSize; // default 16(px)
-$_ratio: 1 / $_rootSize; // default 0.625
-@function pix2rem($Number) {
+$_ratio: 1 / $rootFontSize; // default 0.1
+@function PixToRem($Number) {
   $_computed: round($Number * $_ratio * 1000) / 1000;
   @return #{$_computed}rem;
 }
 
 // screen size ======================
-@function screens($key) {
+@function Screens($key) {
   @return map-get($screens, $key);
 }
 
 // color =======================
-@function colors($key) {
+@function Colors($key) {
   @return map-get($colors, $key);
 }
 
 // fonts =======================
-@function fonts($key) {
+@function Fonts($key) {
   @return map-get($fonts, $key);
 }
 

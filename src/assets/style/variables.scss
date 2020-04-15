@@ -12,14 +12,14 @@ $screens: (
 
 // Media Query List ==============================
 $mql-mobile:
-  "(max-width: #{screens('small')})";
+  "(max-width: #{map-get($screens, 'small')})";
 
 $mql-tablet:
-  "(min-width: #{screens('small') + 1px})"
-  "and (max-width: #{screens('large')})";
+  "(min-width: #{map-get($screens, 'small') + 1px})"
+  "and (max-width: #{map-get($screens, 'large')})";
 
 $mql-desktop:
-  "(min-width: #{screens('large') + 1px})";
+  "(min-width: #{map-get($screens, 'large') + 1px})";
 
 // color ====================================
 $_white: whitesmoke;
@@ -39,11 +39,10 @@ $colors: (
 
 // fonts ====================================
 $fonts: (
-  "color": colors(font),
+  "color": #{map-get($colors, 'font')},
   "normal": 400,
   "bold": 600, // iOS激太り対策
   "extraBold": 900,
-  "size": $rootFontSize,
   "kerning": 'palt',
   "space": 0.1em,
   "lineHeight": 1.5,
@@ -59,16 +58,22 @@ $TypeFamily: (
   "number": #{ Gelasio, serif },
 );
 
-// Like a Modular Scale
+// Like a Modular Scale ========================
+@function _PixToRem($Number) {
+  $_ratio: 1 / $rootFontSize; // default 0.1
+  $_computed: round($Number * $_ratio * 1000) / 1000;
+  @return #{$_computed}rem;
+}
+
 $TypeScale: (
-  "extra": pix2rem(177),
-  "h1": pix2rem(110),
-  "h2": pix2rem(68),
-  "h3": pix2rem(42),
-  "h4": pix2rem(26),
-  "subtitle": pix2rem(26),
-  "body": pix2rem(16),
-  "caption": pix2rem(10),
+  "extra": _PixToRem(177),
+  "h1": _PixToRem(110),
+  "h2": _PixToRem(68),
+  "h3": _PixToRem(42),
+  "h4": _PixToRem(26),
+  "subtitle": _PixToRem(26),
+  "body": _PixToRem(16),
+  "caption": _PixToRem(10),
 );
 
 $TypeWeight: (
