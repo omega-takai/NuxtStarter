@@ -19,14 +19,12 @@ $mql-tablet: "(min-width: #{map-get($screens, 'small') + 1px})"
 $mql-desktop: "(min-width: #{map-get($screens, 'large') + 1px})";
 
 // color ====================================
-$white: whitesmoke;
-$black: black;
 $colors: (
-  'white': rgba($white, 1),
-  'whiteAlpha': rgba($white, 0.4),
-  'black': rgba($black, 1),
+  'white': rgba(whitesmoke, 1),
+  'whiteAlpha': rgba(whitesmoke, 0.4),
+  'black': rgba(black, 1),
   'green': rgba(#3b8070, 1),
-  'background': rgba($white, 1),
+  'background': rgba(whitesmoke, 1),
   'accent': rgba(blueviolet, 1),
   'inverted': rgba(#35495e, 1),
   'font': rgba(#333, 1),

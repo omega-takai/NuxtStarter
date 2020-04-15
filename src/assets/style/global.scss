@@ -8,7 +8,8 @@
 
 // Style Instance ==============================
 html {
-  color: fonts('color');
+  color: colors('font');
+  background-color: colors('background');
   font: {
     family: typefamily('normal');
     feature-settings: fonts('kerning');
