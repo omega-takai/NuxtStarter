@@ -11,9 +11,9 @@ html {
   color: fonts('color');
   font: {
     family: typefamily('normal');
+    feature-settings: fonts('kerning');
     size: #{$rootFontSize}px;
     weight: fonts('normal');
-    feature-settings: fonts('kerning');
   }
 }
 
