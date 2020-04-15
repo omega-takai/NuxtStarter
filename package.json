@@ -6,6 +6,9 @@
   "private": true,
   "scripts": {
     "clean": "rimraf .nuxt dist public .out coverage",
+    "clean:dev": "rimraf .nuxt",
+    "clean:test": "rimraf coverage",
+    "predev": "yarn clean:dev",
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "generate": "nuxt-ts generate",
@@ -13,6 +16,7 @@
     "start": "nuxt-ts start",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
     "lint:fix": "yarn lint --fix",
+    "pretest": "yarn clean:test",
     "test": "jest"
   },
   "lint-staged": {
