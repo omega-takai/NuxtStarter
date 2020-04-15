@@ -6,13 +6,13 @@
       h2(:class="$style.subtitle") My excellent Nuxt.js project
       div(:class="$style.links")
         BaseButton(
-          link-url="https://nuxtjs.org/"
+          link-url="https://ja.nuxtjs.org/guide"
           button-text="Documentation"
           color-type="green"
           target="_blank"
         )
         BaseButton(
-          link-url="https://github.com/nuxt/nuxt.js"
+          link-url="https://github.com/t--takai/NuxtStarter"
           button-text="GitHub"
           color-type="grey"
           target="_blank"
