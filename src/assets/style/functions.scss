@@ -23,7 +23,7 @@ $ratio: 1 / $rootFontSize; // default 0.1
 }
 
 @function typeFamily($key) {
-  @return map-get($TypeFamily, $key);
+  @return map-get($typeFamily, $key);
 }
 
 // Like a Modular Scale =======================
