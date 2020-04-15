@@ -81,9 +81,9 @@ export default {
    */
   styleResources: {
     scss: [
-      './src/assets/style/variables.scss',
-      './src/assets/style/mixins.scss',
-      './src/assets/style/functions.scss',
+      './assets/style/variables.scss',
+      './assets/style/mixins.scss',
+      './assets/style/functions.scss',
     ],
   },
   /*
