@@ -4,11 +4,11 @@ $_col-viridian: #3b8070;
 
 @mixin _button($color) {
   display: inline-block;
-  border-radius: 4px;
-  border: 1px solid $color;
+  padding: 10px 30px;
   color: $color;
   text-decoration: none;
-  padding: 10px 30px;
+  border: 1px solid $color;
+  border-radius: 4px;
   &:hover {
     color: $_col-white;
     background-color: $color;
@@ -20,5 +20,6 @@ $_col-viridian: #3b8070;
 }
 .button--grey {
   @include _button($_col-cello);
+
   margin-left: 15px;
 }

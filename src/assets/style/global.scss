@@ -8,12 +8,12 @@
 
 // Style Instance ==============================
 html {
-  color: Fonts('color');
+  color: fonts('color');
   font: {
-    family: TypeFamily('normal');
+    family: typefamily('normal');
     size: #{$rootFontSize}px;
-    weight: Fonts('normal');
-    feature-settings: Fonts('kerning');
+    weight: fonts('normal');
+    feature-settings: fonts('kerning');
   }
 }
 
@@ -23,24 +23,26 @@ html {
 
 // Enter
 .v-enter {
-  opacity: 0
+  opacity: 0;
 }
 .v-enter-to {
-  opacity: 1
+  opacity: 1;
 }
 .v-enter-active {
   $_outCubic: cubic-bezier(0.22, 0.61, 0.36, 1);
+
   transition: opacity 1s $_outCubic;
 }
 
 // Leave
 .v-leave {
-  opacity: 1
+  opacity: 1;
 }
 .v-leave-to {
-  opacity: 0
+  opacity: 0;
 }
 .v-leave-active {
   $_inCubic: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+
   transition: opacity 2s $_inCubic;
 }
