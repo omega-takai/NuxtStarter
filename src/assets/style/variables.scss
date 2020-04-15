@@ -19,33 +19,32 @@ $mql-tablet: "(min-width: #{map-get($screens, 'small') + 1px})"
 $mql-desktop: "(min-width: #{map-get($screens, 'large') + 1px})";
 
 // color ====================================
-$_white: whitesmoke;
-$_black: black;
-$_fonts: #333;
+$white: whitesmoke;
+$black: black;
 $colors: (
-  'white': rgba($_white, 1),
-  'whiteAlpha': rgba($_white, 0.4),
-  'black': rgba($_black, 1),
+  'white': rgba($white, 1),
+  'whiteAlpha': rgba($white, 0.4),
+  'black': rgba($black, 1),
   'green': rgba(#3b8070, 1),
-  'background': rgba($_white, 1),
+  'background': rgba($white, 1),
   'accent': rgba(blueviolet, 1),
   'inverted': rgba(#35495e, 1),
-  'font': rgba($_fonts, 1),
-  'fontSub': rgba($_fonts, 0.6)
+  'font': rgba(#333, 1),
+  'fontSub': rgba(#333, 0.6)
 );
 
 // fonts ====================================
 $fonts: (
   'color': #{map-get($colors, 'font')},
   'normal': 400,
-  'bold': 600,
   // iOS激太り対策 'extraBold': 900,
+  'bold': 600,
   'kerning': 'palt',
   'space': 0.1em,
   'lineHeight': 1.5
 );
 
-$TypeFamily: (
+$typeFamily: (
   'normal': #{YakuHanJP,
   'Noto Sans JP',
   '-apple-system',
@@ -61,24 +60,24 @@ $TypeFamily: (
 );
 
 // Like a Modular Scale ========================
-@function _PixToRem($Number) {
-  $_ratio: 1 / $rootFontSize; // default 0.1
-  $_computed: round($Number * $_ratio * 1000) / 1000;
-  @return #{$_computed}rem;
+@function pix-to-rem($Number) {
+  $ratio: 1 / $rootFontSize; // default 0.1
+  $computed: round($Number * $ratio * 1000) / 1000;
+  @return #{$computed}rem;
 }
 
-$TypeScale: (
-  'extra': _pixtorem(177),
-  'h1': _pixtorem(110),
-  'h2': _pixtorem(68),
-  'h3': _pixtorem(42),
-  'h4': _pixtorem(26),
-  'subtitle': _pixtorem(26),
-  'body': _pixtorem(16),
-  'caption': _pixtorem(10)
+$typeScale: (
+  'extra': pix-to-rem(177),
+  'h1': pix-to-rem(110),
+  'h2': pix-to-rem(68),
+  'h3': pix-to-rem(42),
+  'h4': pix-to-rem(26),
+  'subtitle': pix-to-rem(26),
+  'body': pix-to-rem(16),
+  'caption': pix-to-rem(10)
 );
 
-$TypeWeight: (
+$typeWeight: (
   'extra': 900,
   'h1': 400,
   'h2': 400,
