@@ -1,0 +1,89 @@
+// Default FontSize
+// root em = 1rem = 10px
+$root-font-size: 10;
+
+// screen size ==============================
+// ref: https://hashimotosan.hatenablog.jp/entry/2019/05/28/164834
+$screens: (
+  'extraLarge': 1366px,
+  'large': 960px,
+  'small': 560px
+);
+
+// Media Query List ==============================
+$mql-mobile: "(max-width: #{map-get($screens, 'small')})";
+
+$mql-tablet: "(min-width: #{map-get($screens, 'small') + 1px})"
+  "and (max-width: #{map-get($screens, 'large')})";
+
+$mql-desktop: "(min-width: #{map-get($screens, 'large') + 1px})";
+
+// color ====================================
+$white: whitesmoke;
+$black: black;
+$colors: (
+  'white': rgba($white, 1),
+  'whiteAlpha': rgba($white, 0.4),
+  'black': rgba($black, 1),
+  'green': rgba(#3b8070, 1),
+  'background': rgba($white, 1),
+  'accent': rgba(blueviolet, 1),
+  'inverted': rgba(#35495e, 1),
+  'font': rgba(#333, 1),
+  'fontSub': rgba(#333, 0.6)
+);
+
+// fonts ====================================
+$fonts: (
+  'color': #{map-get($colors, 'font')},
+  'normal': 400,
+  // iOS激太り対策 'extraBold': 900,
+  'bold': 600,
+  'kerning': 'palt',
+  'space': 0.1em,
+  'lineHeight': 1.5
+);
+
+$type-family: (
+  'normal': #{YakuHanJP,
+  'Noto Sans JP',
+  '-apple-system',
+  BlinkMacSystemFont,
+  'Segoe UI',
+  'Hiragino Sans',
+  'Hiragino Kaku Gothic ProN',
+  Arial,
+  Meiryo,
+  sans-serif},
+  'number': #{Gelasio,
+  serif}
+);
+
+// Like a Modular Scale ========================
+@function pix-to-rem($Number) {
+  $ratio: 1 / $root-font-size; // default 0.1
+  $computed: round($Number * $ratio * 1000) / 1000;
+  @return #{$computed}rem;
+}
+
+$type-scale: (
+  'extra': pix-to-rem(177),
+  'h1': pix-to-rem(110),
+  'h2': pix-to-rem(68),
+  'h3': pix-to-rem(42),
+  'h4': pix-to-rem(26),
+  'subtitle': pix-to-rem(26),
+  'body': pix-to-rem(16),
+  'caption': pix-to-rem(10)
+);
+
+$type-weight: (
+  'extra': 900,
+  'h1': 400,
+  'h2': 400,
+  'h3': 600,
+  'h4': 600,
+  'subtitle': 600,
+  'body': 400,
+  'caption': 400
+);

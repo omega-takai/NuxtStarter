@@ -1,31 +1,28 @@
-$_col-darkAzure: #35495e;
-$_col-darkCobaltBlue: #526488;
-
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
   text-align: center;
 }
 
 .title {
+  display: block;
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
   font-size: 100px;
-  color: $_col-darkAzure;
+  font-weight: 300;
+  color: fonts('color');
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: $_col-darkCobaltBlue;
-  word-spacing: 5px;
   padding-bottom: 15px;
+  font-size: 42px;
+  font-weight: 300;
+  color: colors('accent');
+  word-spacing: 5px;
 }
 
 .links {

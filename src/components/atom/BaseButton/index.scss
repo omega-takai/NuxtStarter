@@ -1,24 +1,25 @@
-$_col-white: #fff;
-$_col-cello: #35495e;
-$_col-viridian: #3b8070;
+$col-white: #fff;
+$col-cello: #35495e;
+$col-viridian: #3b8070;
 
-@mixin _button($color) {
+@mixin button($color) {
   display: inline-block;
-  border-radius: 4px;
-  border: 1px solid $color;
+  padding: 10px 30px;
   color: $color;
   text-decoration: none;
-  padding: 10px 30px;
+  border: 1px solid $color;
+  border-radius: 4px;
   &:hover {
-    color: $_col-white;
+    color: $col-white;
     background-color: $color;
   }
 }
 
 .button--green {
-  @include _button($_col-viridian);
+  @include button($col-viridian);
 }
 .button--grey {
-  @include _button($_col-cello);
+  @include button($col-cello);
+
   margin-left: 15px;
 }

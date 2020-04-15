@@ -5,17 +5,22 @@
   "author": "Tomonari Takai",
   "private": true,
   "scripts": {
+    "clean": "rimraf .nuxt dist public .out coverage",
+    "clean:dev": "rimraf .nuxt",
+    "clean:test": "rimraf coverage",
+    "predev": "yarn clean:dev",
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "generate": "nuxt-ts generate",
     "generate:gh-pages": "cross-env BASE_DIR=/NuxtStarter/ nuxt-ts generate",
     "start": "nuxt-ts start",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
-    "lint:fix": "yarn lint --fix",
+    "lint:style": "stylelint **/*.css **/*.scss **/*.vue",
+    "pretest": "yarn clean:test",
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": "yarn lint --fix",
+    "*.{js,ts,vue}": "eslint --fix",
     "*.{css,scss,vue}": "stylelint --fix"
   },
   "husky": {
@@ -28,12 +33,14 @@
     "@nuxtjs/axios": "5.9.7",
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/pwa": "3.0.0-beta.20",
+    "destyle.css": "^1.0.11",
     "nuxt": "2.12.2"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "0.6.5",
     "@nuxtjs/eslint-config-typescript": "1.0.2",
     "@nuxtjs/eslint-module": "1.1.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/stylelint-module": "3.2.2",
     "@vue/test-utils": "1.0.0-beta.33",
     "babel-eslint": "10.1.0",
@@ -51,9 +58,17 @@
     "prettier": "1.19.1",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
+    "rimraf": "^3.0.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "stylelint": "13.3.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-recess-order": "^2.0.4",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.17.0",
     "ts-jest": "25.3.1",
     "vue-jest": "4.0.0-beta.2"
   },

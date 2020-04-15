@@ -55,10 +55,6 @@ export default {
    */
   loading: { color: '#fff' },
   /*
-   ** Global CSS
-   */
-  css: ['@/assets/style/global.css'],
-  /*
    ** Plugins to load before mounting the App
    */
   plugins: [],
@@ -69,7 +65,27 @@ export default {
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    // Doc: https://github.com/nuxt-community/style-resources-module/
+    '@nuxtjs/style-resources',
   ],
+  /**
+   * Global CSS
+   */
+  css: ['@/assets/style/global.scss'],
+  /**
+   * Style Resources
+   * Do not import actual styles.
+   * Use this module only to import
+   * variables, mixins, functions (et cetera)
+   * as they won't exist in the actual build.
+   */
+  styleResources: {
+    scss: [
+      './assets/style/variables.scss',
+      './assets/style/mixins.scss',
+      './assets/style/functions.scss',
+    ],
+  },
   /*
    ** Nuxt.js modules
    */
