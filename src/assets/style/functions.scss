@@ -22,15 +22,15 @@ $ratio: 1 / $root-font-size; // default 0.1
   @return map-get($fonts, $key);
 }
 
-@function typeFamily($key) {
+@function type-family($key) {
   @return map-get($type-family, $key);
 }
 
 // Like a Modular Scale =======================
-@function typeScale($key) {
+@function type-scale($key) {
   @return map-get($type-scale, $key);
 }
 
-@function typeWeight($key) {
+@function type-weight($key) {
   @return map-get($type-weight, $key);
 }
