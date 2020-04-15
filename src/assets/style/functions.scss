@@ -1,36 +1,36 @@
 @import 'variables';
 
 // calc =======================
-$_ratio: 1 / $rootFontSize; // default 0.1
-@function PixToRem($Number) {
-  $_computed: round($Number * $_ratio * 1000) / 1000;
-  @return #{$_computed}rem;
+$ratio: 1 / $rootFontSize; // default 0.1
+@function pix-to-rem($Number) {
+  $computed: round($Number * $ratio * 1000) / 1000;
+  @return #{$computed}rem;
 }
 
 // screen size ======================
-@function Screens($key) {
+@function screens($key) {
   @return map-get($screens, $key);
 }
 
 // color =======================
-@function Colors($key) {
+@function colors($key) {
   @return map-get($colors, $key);
 }
 
 // fonts =======================
-@function Fonts($key) {
+@function fonts($key) {
   @return map-get($fonts, $key);
 }
 
-@function TypeFamily($key) {
+@function typeFamily($key) {
   @return map-get($TypeFamily, $key);
 }
 
 // Like a Modular Scale =======================
-@function TypeScale($key) {
+@function typeScale($key) {
   @return map-get($TypeScale, $key);
 }
 
-@function TypeWeight($key) {
+@function typeWeight($key) {
   @return map-get($TypeWeight, $key);
 }
