@@ -31,6 +31,8 @@ jobs:
       - run: yarn install
       - name: eslint
         run: yarn lint
+      - name: stylelint
+        run: yarn lint:style
 
   test:
     name: Unit Test

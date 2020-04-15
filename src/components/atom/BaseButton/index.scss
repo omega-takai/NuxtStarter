@@ -1,0 +1,25 @@
+$col-white: #fff;
+$col-cello: #35495e;
+$col-viridian: #3b8070;
+
+@mixin button($color) {
+  display: inline-block;
+  padding: 10px 30px;
+  color: $color;
+  text-decoration: none;
+  border: 1px solid $color;
+  border-radius: 4px;
+  &:hover {
+    color: $col-white;
+    background-color: $color;
+  }
+}
+
+.button--green {
+  @include button($col-viridian);
+}
+.button--grey {
+  @include button($col-cello);
+
+  margin-left: 15px;
+}
