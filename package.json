@@ -6,9 +6,7 @@
   "private": true,
   "scripts": {
     "clean": "rimraf .nuxt dist public .out coverage",
-    "clean:dev": "rimraf .nuxt",
-    "clean:test": "rimraf coverage",
-    "predev": "yarn clean:dev",
+    "predev": "rimraf .nuxt",
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "generate": "nuxt-ts generate",
@@ -18,7 +16,6 @@
     "lint:script": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.css **/*.scss **/*.vue",
     "lint:fix": "yarn lint:script --fix && yarn lint:style --fix",
-    "pretest": "yarn clean:test",
     "test": "jest"
   },
   "lint-staged": {
@@ -27,7 +24,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-merge": "yarn clean && yarn install",
+      "post-checkout": "yarn clean && yarn install",
+      "post-rebase": "yarn clean && yarn install",
+      "pre-auto-gc": "yarn clean"
     }
   },
   "dependencies": {

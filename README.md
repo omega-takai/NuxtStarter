@@ -1,5 +1,7 @@
 # NuxtStarter
 
+![DEPLOYMENT](https://github.com/t--takai/NuxtStarter/workflows/DEPLOYMENT/badge.svg?event=push)
+
 > My excellent Nuxt.js project
 
 ## Build Setup
