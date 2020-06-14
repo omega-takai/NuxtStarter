@@ -40,7 +40,7 @@
     "nuxt": "2.12.2"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "0.6.7",
+    "@nuxt/typescript-build": "1.0.3",
     "@nuxtjs/eslint-config-typescript": "2.0.0",
     "@nuxtjs/eslint-module": "2.0.0",
     "@nuxtjs/style-resources": "1.0.0",
