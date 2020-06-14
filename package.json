@@ -72,7 +72,7 @@
     "stylelint-prettier": "1.1.2",
     "stylelint-scss": "3.17.2",
     "ts-jest": "23.10.5",
-    "vue-jest": "4.0.0-beta.2"
+    "vue-jest": "4.0.0-beta.3"
   },
   "browserslist": [
     "defaults",
