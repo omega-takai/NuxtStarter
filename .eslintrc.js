@@ -5,7 +5,7 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint',
+    // parser: 'babel-eslint',
   },
   /**
    * SEE: https://ja.nuxtjs.org/guide/development-tools/
