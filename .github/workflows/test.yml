@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [12.x, 10.x]
+        node: [12.x, 14.x]
     steps:
       - uses: actions/checkout@master
       - name: Setup node
