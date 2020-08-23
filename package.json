@@ -36,7 +36,7 @@
     "@nuxtjs/axios": "5.12.1",
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/pwa": "3.0.1",
-    "destyle.css": "1.0.14",
+    "destyle.css": "1.0.15",
     "nuxt": "2.14.3"
   },
   "devDependencies": {
