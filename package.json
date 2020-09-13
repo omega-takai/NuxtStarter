@@ -37,7 +37,7 @@
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/pwa": "3.0.2",
     "destyle.css": "1.0.15",
-    "nuxt": "2.14.4"
+    "nuxt": "2.14.5"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "2.0.3",
