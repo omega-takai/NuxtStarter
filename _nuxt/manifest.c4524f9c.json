@@ -49,6 +49,5 @@
   "start_url": "/NuxtStarter/?standalone=true",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#fff",
   "lang": "en"
 }
