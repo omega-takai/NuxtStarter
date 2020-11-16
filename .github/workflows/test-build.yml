@@ -30,7 +30,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn generate
       - name: Show file size
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: WebApplication
           path: ./dist
