@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - run: yarn versions
@@ -22,7 +22,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - run: echo ${{ steps.yarn-cache.outputs.dir }}
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Get yarn cache
@@ -50,7 +50,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - run: echo ${{ steps.yarn-cache.outputs.dir }}
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -70,7 +70,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - run: yarn versions
@@ -79,7 +79,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - run: echo ${{ steps.yarn-cache.outputs.dir }}
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
