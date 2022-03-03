@@ -75,7 +75,6 @@
   },
   "browserslist": [
     "defaults",
-    "not < 1%",
-    "IE 11"
+    "not < 1%"
   ]
 }
