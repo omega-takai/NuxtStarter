@@ -1,8 +1,10 @@
 {
-  "name": "NuxtStarter",
+  "name": "nuxt-starter",
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf .nuxt dist public .out coverage",
+    "predev": "rimraf .nuxt",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -15,8 +17,8 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint --cache",
-    "*.{css,scss,sass,html,vue}": "stylelint",
+    "*.{js,vue}": "eslint --cache --fix",
+    "*.{css,scss,sass,html,vue}": "stylelint --fix",
     "*.**": "prettier --check --ignore-unknown"
   },
   "dependencies": {

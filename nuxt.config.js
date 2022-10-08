@@ -9,7 +9,7 @@ export default {
   head: {
     title: 'NuxtStarter',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
@@ -28,6 +28,8 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+
+  srcDir: 'src/',
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

@@ -94,3 +94,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Library
+src/assets/the-new-css-reset.css

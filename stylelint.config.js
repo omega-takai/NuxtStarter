@@ -8,4 +8,6 @@ module.exports = {
   // add your custom config here
   // https://stylelint.io/user-guide/configuration
   rules: {},
+  // stylelint ignores the node_modules directory by default.
+  ignoreFiles: ['**/*.{js,ts}', 'src/assets/the-new-css-reset.css'],
 }
