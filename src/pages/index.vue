@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <NuxtLogo></NuxtLogo>
+    <NuxtLogo />
     <ul>
       <li>
         <NuxtLink to="/">Home page</NuxtLink>

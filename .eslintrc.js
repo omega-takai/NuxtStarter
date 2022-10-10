@@ -8,8 +8,29 @@ module.exports = {
     parser: '@babel/eslint-parser',
     requireConfigFile: false,
   },
-  extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
+  extends: [
+    '@nuxtjs',
+    'plugin:nuxt/recommended',
+    'prettier',
+    'plugin:vue/strongly-recommended',
+    'plugin:prettier/recommended',
+    'plugin:nuxt/recommended',
+  ],
   plugins: [],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'always',
+          component: 'always',
+        },
+        svg: 'always',
+        math: 'always',
+      },
+    ],
+    'vue/multi-word-component-names': 'off',
+  },
 }

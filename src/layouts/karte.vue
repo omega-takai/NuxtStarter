@@ -1,7 +1,7 @@
 <template>
   <div class="karte-wrapper">
     <div class="karte-inner">
-      <div class="karte-widget__backdrop"></div>
+      <div class="karte-widget__backdrop" />
       <div class="karte-widget__container">
         <div class="karte-widget__content">
           <Nuxt />
