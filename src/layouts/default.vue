@@ -1,6 +1,3 @@
-<template lang="pug">
-  div
-    nuxt
+<template>
+  <Nuxt />
 </template>
-
-<script lang="ts" src="@/assets/script/layouts/default.ts" />

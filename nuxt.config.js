@@ -1,137 +1,87 @@
-import Sass from 'sass'
-import Fiber from 'fibers'
-
-const loaderSetting = {
-  loaders: {
-    scss: {
-      implementation: Sass,
-      sassOptions: {
-        fiber: Fiber,
-      },
-    },
-  },
-}
-
-// SEE: https://ja.nuxtjs.org/faq/github-pages/
-const baseDir = process.env.BASE_DIR || '/'
-const routerBase = process.env.BASE_DIR
-  ? {
-      router: {
-        base: baseDir,
-      },
-      generate: {
-        fallback: true, // '404.html' を使用したい場合
-        dir: 'public',
-      },
-    }
-  : {}
-
 export default {
-  mode: 'universal',
-  /*
-   ** Headers of the page
-   */
-  head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || '',
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  // ssr: false,
+
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
+  head() {
+    return {
+      titleTemplate: (titleChunk) => {
+        return titleChunk ? `${titleChunk} - NuxtStarter` : 'NuxtStarter'
       },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: `${baseDir}favicon.ico` },
-    ],
+      htmlAttrs: {
+        lang: 'ja',
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: '' },
+        { name: 'format-detection', content: 'telephone=no' },
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    }
   },
-  /**
-   * Doc: https://ja.nuxtjs.org/api/configuration-srcdir/
-   */
-  srcDir: 'src/',
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-  /*
-   ** Plugins to load before mounting the App
-   */
+
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: [],
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
-  /*
-   ** Nuxt.js dev-modules
-   */
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
+
+  srcDir: 'src/',
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/stylelint-module
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    // Doc: https://github.com/nuxt-community/style-resources-module/
-    '@nuxtjs/style-resources',
   ],
-  /**
-   * Global CSS
-   */
-  css: ['@/assets/style/global.scss'],
-  /**
-   * Style Resources
-   * Do not import actual styles.
-   * Use this module only to import
-   * variables, mixins, functions (et cetera)
-   * as they won't exist in the actual build.
-   */
-  styleResources: {
-    scss: [
-      './assets/style/variables.scss',
-      './assets/style/mixins.scss',
-      './assets/style/functions.scss',
-    ],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [],
+
+  optimization: {
+    minimize: false,
   },
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
-  ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
-  /**
-   * See: https://ja.nuxtjs.org/api/configuration-server
-   */
-  server: {
-    port: 8000, // デフォルト: 3000
-    timing: false,
-  },
-  /*
-   ** Build configuration
-   */
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    ...loaderSetting,
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|ts|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-        })
-      }
+    optimization: {
+      minimize: false,
     },
-    postcss: {
-      preset: {
-        autoprefixer: { grid: 'autoplace' },
-      },
+    html: {
+      minify: { minifyCSS: false },
+    },
+    extractCSS: true,
+    minifyCSS: false,
+    filenames: {
+      app: ({ isDev, isModern }) =>
+        isDev
+          ? `[name]${isModern ? '.modern' : ''}.js`
+          : `[contenthash:7]${isModern ? '.modern' : ''}.js`,
+      chunk: ({ isDev, isModern }) =>
+        isDev
+          ? `[name]${isModern ? '.modern' : ''}.js`
+          : `[contenthash:7]${isModern ? '.modern' : ''}.js`,
+      css: ({ isDev }) =>
+        isDev ? '[name].css' : 'css/[name].[contenthash:7].css',
+      img: ({ isDev }) =>
+        isDev ? '[path][name].[ext]' : 'img/[name].[contenthash:7].[ext]',
+      font: ({ isDev }) =>
+        isDev ? '[path][name].[ext]' : 'fonts/[name].[contenthash:7].[ext]',
+      video: ({ isDev }) =>
+        isDev ? '[path][name].[ext]' : 'videos/[name].[contenthash:7].[ext]',
+    },
+    splitChunks: {
+      layouts: true,
+      pages: false,
+      commons: true,
     },
   },
-  ...routerBase,
 }

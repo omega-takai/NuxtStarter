@@ -5,31 +5,32 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    // parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false,
   },
-  /**
-   * SEE: https://ja.nuxtjs.org/guide/development-tools/
-   */
   extends: [
-    '@nuxtjs/eslint-config-typescript',
+    '@nuxtjs',
+    'plugin:nuxt/recommended',
     'prettier',
     'plugin:vue/strongly-recommended',
     'plugin:prettier/recommended',
     'plugin:nuxt/recommended',
   ],
-  plugins: ['prettier', 'vue'],
+  plugins: [],
   // add your custom rules here
   rules: {
-    semi: [2, 'never'],
-    'no-console': 'off',
-    'vue/max-attributes-per-line': 'off',
-    'prettier/prettier': [
+    'vue/html-self-closing': [
       'error',
       {
-        trailingComma: 'es5',
-        singleQuote: true,
-        semi: false,
+        html: {
+          void: 'always',
+          normal: 'always',
+          component: 'always',
+        },
+        svg: 'always',
+        math: 'always',
       },
     ],
+    'vue/multi-word-component-names': 'off',
   },
 }

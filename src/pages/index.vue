@@ -1,23 +1,38 @@
-<template lang="pug">
-  div(:class="$style.container")
-    div
-      TheLogo
-      h1(:class="$style.title") NuxtStarter
-      h2(:class="$style.subtitle") My excellent Nuxt.js project
-      div(:class="$style.links")
-        BaseButton(
-          link-url="https://ja.nuxtjs.org/guide"
-          button-text="Documentation"
-          color-type="green"
-          target="_blank"
-        )
-        BaseButton(
-          link-url="https://github.com/t--takai/NuxtStarter"
-          button-text="GitHub"
-          color-type="grey"
-          target="_blank"
-        )
+<template>
+  <div class="root">
+    <NuxtLogo />
+    <ul>
+      <li>
+        <NuxtLink to="/">Home page</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/karte">Play Ground For Karte</NuxtLink>
+      </li>
+    </ul>
+  </div>
 </template>
 
-<script lang="ts" src="./index.ts"></script>
-<style lang="scss" module src="./index.scss"></style>
+<script>
+export default {
+  name: 'IndexPage',
+}
+</script>
+<style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<style lang="scss" scoped>
+.root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  padding: 40px 0;
+  grid-auto-rows: min-content;
+}
+</style>
