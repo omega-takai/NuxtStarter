@@ -6,5 +6,8 @@
 export default {
   name: 'PlayGroundForKarte',
   layout: 'karte',
+  head: {
+    title: 'karte',
+  },
 }
 </script>
